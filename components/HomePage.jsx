@@ -3,7 +3,6 @@ import React, { useState } from "react";
 export default function HomePage() {
   const [curriculumIndex, setCurriculumIndex] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
-  const [showCurriculum, setShowCurriculum] = useState(false);
 
   const curriculumSections = [
     {
@@ -24,7 +23,6 @@ export default function HomePage() {
   ];
 
   const handleClick = () => {
-    setShowCurriculum(true);
     setCurriculumIndex((curriculumIndex + 1) % 3);
     setAnimationKey(prev => prev + 1);
   };
@@ -76,16 +74,14 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      {showCurriculum && (
-        <section key={animationKey} className="py-16 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            {curriculumSections[curriculumIndex].title}
-          </h2>
-          <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
-            <p>{curriculumSections[curriculumIndex].content}</p>
-          </div>
-        </section>
-      )}
+      <section key={animationKey} className="py-16 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          {curriculumSections[curriculumIndex].title}
+        </h2>
+        <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
+          <p>{curriculumSections[curriculumIndex].content}</p>
+        </div>
+      </section>
 
       <style jsx>{`
         @keyframes slide-fade-in {
