@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function HomePage() {
+  const [showCurriculum, setShowCurriculum] = useState(false);
+
   return (
-    <main className="bg-[#f8f9fa] text-gray-800">
+    <main className={`text-gray-800 transition-colors duration-700 ${showCurriculum ? 'bg-gray-900 text-white' : 'bg-[#f8f9fa]'}`}>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -12,41 +14,26 @@ export default function HomePage() {
           天主教文興國高中特色科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能。
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
+          <button
+            onClick={() => setShowCurriculum(true)}
+            className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100"
+          >
             了解課程架構
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
             查看歷屆成果
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
-            擁有個人網站
+            建立學習網站
           </button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-8 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,150,255,0.08),rgba(0,150,255,0.08)_1px,transparent_1px,transparent_20px)] animate-[bgmove_30s_linear_infinite] z-0"></div>
-        <style>{`
-          @keyframes bgmove {
-            from { background-position: 0 0; }
-            to { background-position: 1000px 0; }
-          }
-        `}</style>
-        <h2 className="text-3xl font-bold text-center mb-12 relative z-10">下一代 讓科技上身</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
-          {[
-            { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
-            { icon: "🏆", title: "競賽陪伴", desc: "全程指導參與全國與國際科技競賽，屢獲佳績。" },
-            { icon: "🤖", title: "AI 科技", desc: "結合人工智慧、物聯網等技術，走在時代尖端。" },
-            { icon: "🔗", title: "跨領域整合", desc: "融合數學、物理與生活應用，強化邏輯與創造力。" },
-          ].map((item, index) => (
-            <div key={index} className="bg-gray-50 p-6 rounded-xl shadow text-center">
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
-            </div>
-          ))}
+      <section className={`py-16 px-8 transition-opacity duration-1000 ${showCurriculum ? 'opacity-100 bg-gray-800' : 'opacity-0 h-0 overflow-hidden'}`}>
+        <h2 className="text-3xl font-bold text-center mb-12">探索 1：AI × 物聯網 × 數學融合</h2>
+        <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
+          <p>探索 AI 的核心原理與應用，搭配物聯網裝置開發，結合數學與自然科學建立跨域學習模型，讓學生掌握運算思維與實作能力。</p>
         </div>
       </section>
 
