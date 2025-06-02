@@ -18,9 +18,6 @@ export default function HomePage() {
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
             查看歷屆成果
           </button>
-          <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
-            每位學生都將擁有自己的科技網站
-          </button>
         </div>
       </section>
 
