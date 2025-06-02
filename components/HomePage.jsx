@@ -24,7 +24,7 @@ export default function HomePage() {
 
   const handleClick = () => {
     setCurriculumIndex((curriculumIndex + 1) % 3);
-    setAnimationKey(prev => prev + 1); // 強制觸發動畫重播
+    setAnimationKey(prev => prev + 1);
   };
 
   return (
@@ -54,9 +54,10 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">下一代 讓科技上身</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <section className="py-16 px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,150,255,0.05),rgba(0,150,255,0.05)_1px,transparent_1px,transparent_24px)] animate-slowbg z-0"></div>
+        <h2 className="text-3xl font-bold text-center mb-12 relative z-10">下一代 讓科技上身</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
           {[
             { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
             { icon: "🏆", title: "競賽陪伴", desc: "全程指導參與全國與國際科技競賽，屢獲佳績。" },
@@ -89,6 +90,13 @@ export default function HomePage() {
         }
         .animate-slide-fade-in {
           animation: slide-fade-in 0.6s ease-out;
+        }
+        @keyframes slowbg {
+          0% { background-position: 0 0; }
+          100% { background-position: 1000px 0; }
+        }
+        .animate-slowbg {
+          animation: slowbg 60s linear infinite;
         }
       `}</style>
 
