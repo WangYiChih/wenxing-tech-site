@@ -9,7 +9,7 @@ export default function HomePage() {
           未知 × 創新｜打造下一代的科技原型創客
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto">
-          天主教文興國中特色科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能。
+          天主教文興國中特色科技實驗班課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能。
         </p>
         <div className="mt-6 space-x-4">
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
@@ -23,7 +23,7 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className="py-16 px-8 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-12">我們的特色</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">我們讓下一代  科技上身</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
             { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
