@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function HomePage() {
   const [curriculumIndex, setCurriculumIndex] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
   const [showCurriculum, setShowCurriculum] = useState(false);
-
-  useEffect(() => {
-    // 確保首頁載入時不顯示探索內容
-    setShowCurriculum(false);
-  }, []);
 
   const curriculumSections = [
     {
