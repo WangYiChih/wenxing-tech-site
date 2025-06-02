@@ -19,7 +19,7 @@ export default function HomePage() {
             查看歷屆成果
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
-            擁有學習網站
+            個人學習網站
           </button>
         </div>
       </section>
