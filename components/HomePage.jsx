@@ -67,7 +67,7 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      <section className="py-16 px-8 transition-all duration-700 ease-in-out opacity-100 animate-fade-in">
+      <section className="py-16 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
         <h2 className="text-3xl font-bold text-center mb-12">
           {curriculumSections[curriculumIndex].title}
         </h2>
@@ -77,12 +77,12 @@ export default function HomePage() {
       </section>
 
       <style jsx>{`
-        @keyframes fade-in {
+        @keyframes slide-fade-in {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out;
+        .animate-slide-fade-in {
+          animation: slide-fade-in 0.6s ease-out;
         }
       `}</style>
 
