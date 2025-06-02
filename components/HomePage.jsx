@@ -8,7 +8,7 @@ export default function HomePage() {
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           未知 × 創新｜打造下一代的科技原型創客
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed md:leading-loose">
           天主教文興國高中特色科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能。
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
