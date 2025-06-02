@@ -11,12 +11,15 @@ export default function HomePage() {
         <p className="text-lg md:text-xl max-w-2xl mx-auto">
           天主教文興國高中特色科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能。
         </p>
-        <div className="mt-6 space-x-4">
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
             了解課程架構
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
             查看歷屆成果
+          </button>
+          <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
+            每位學生都將擁有自己的科技網站
           </button>
         </div>
       </section>
@@ -30,7 +33,7 @@ export default function HomePage() {
             to { background-position: 1000px 0; }
           }
         `}</style>
-        <h2 className="text-3xl font-bold text-center mb-12 relative z-10">下一代 科技上身</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 relative z-10">下一代 讓科技上身</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
           {[
             { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
