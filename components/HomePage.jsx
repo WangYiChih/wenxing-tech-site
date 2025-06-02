@@ -4,7 +4,7 @@ export default function HomePage() {
   const [showCurriculum, setShowCurriculum] = useState(false);
 
   return (
-    <main className={`text-gray-800 transition-colors duration-700 ${showCurriculum ? 'bg-gray-900 text-white' : 'bg-[#f8f9fa]'}`}>
+    <main className="text-gray-800 bg-[#f8f9fa] transition-colors duration-700">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -30,7 +30,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className={`py-16 px-8 transition-all duration-1000 ease-in-out ${showCurriculum ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
+      <section className="py-16 px-8">
         <h2 className="text-3xl font-bold text-center mb-12">下一代 讓科技上身</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
@@ -49,7 +49,7 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      <section className={`py-16 px-8 transition-all duration-1000 ease-in-out ${showCurriculum ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>        
+      <section className={`py-16 px-8 transition-all duration-700 ease-in-out ${showCurriculum ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
         <h2 className="text-3xl font-bold text-center mb-12">探索 1：AI × 物聯網 × 數學融合</h2>
         <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
           <p>探索 AI 的核心原理與應用，搭配物聯網裝置開發，結合數學與自然科學建立跨域學習模型，讓學生掌握運算思維與實作能力。</p>
