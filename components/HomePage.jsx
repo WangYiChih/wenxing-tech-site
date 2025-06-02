@@ -15,7 +15,7 @@ export default function HomePage() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button
-            onClick={() => setShowCurriculum(true)}
+            onClick={() => setShowCurriculum(!showCurriculum)}
             className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100"
           >
             了解課程架構
@@ -30,7 +30,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className={`py-16 px-8 transition-all duration-700 ${showCurriculum ? 'opacity-0 max-h-0 overflow-hidden' : 'opacity-100'}`}>
+      <section className={`py-16 px-8 transition-all duration-1000 ease-in-out ${showCurriculum ? 'opacity-0 scale-95 pointer-events-none' : 'opacity-100 scale-100'}`}>
         <h2 className="text-3xl font-bold text-center mb-12">下一代 讓科技上身</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {[
@@ -49,7 +49,7 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      <section className={`py-16 px-8 transition-opacity duration-1000 ${showCurriculum ? 'opacity-100 bg-gray-800' : 'opacity-0 h-0 overflow-hidden'}`}>
+      <section className={`py-16 px-8 transition-all duration-1000 ease-in-out ${showCurriculum ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>        
         <h2 className="text-3xl font-bold text-center mb-12">探索 1：AI × 物聯網 × 數學融合</h2>
         <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
           <p>探索 AI 的核心原理與應用，搭配物聯網裝置開發，結合數學與自然科學建立跨域學習模型，讓學生掌握運算思維與實作能力。</p>
