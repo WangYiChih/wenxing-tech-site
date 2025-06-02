@@ -30,6 +30,25 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
+      <section className={`py-16 px-8 transition-all duration-700 ${showCurriculum ? 'opacity-0 max-h-0 overflow-hidden' : 'opacity-100'}`}>
+        <h2 className="text-3xl font-bold text-center mb-12">下一代 讓科技上身</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {[
+            { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
+            { icon: "🏆", title: "競賽陪伴", desc: "全程指導參與全國與國際科技競賽，屢獲佳績。" },
+            { icon: "🤖", title: "AI 科技", desc: "結合人工智慧、物聯網等技術，走在時代尖端。" },
+            { icon: "🔗", title: "跨領域整合", desc: "融合數學、物理與生活應用，強化邏輯與創造力。" },
+          ].map((item, index) => (
+            <div key={index} className="bg-gray-50 p-6 rounded-xl shadow text-center">
+              <div className="text-4xl mb-4">{item.icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Exploratory Curriculum Reveal Section */}
       <section className={`py-16 px-8 transition-opacity duration-1000 ${showCurriculum ? 'opacity-100 bg-gray-800' : 'opacity-0 h-0 overflow-hidden'}`}>
         <h2 className="text-3xl font-bold text-center mb-12">探索 1：AI × 物聯網 × 數學融合</h2>
         <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
