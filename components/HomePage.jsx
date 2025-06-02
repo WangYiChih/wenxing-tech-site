@@ -9,7 +9,7 @@ export default function HomePage() {
           未知 × 創新｜打造下一代的科技原型創客
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto">
-          天主教文興國高中特色科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能，自建網站紀錄學習過程。
+          天主教文興國高中科技實驗課程，探索 AI、機器人、物聯網與競賽應用，啟動學生的創造與實作潛能，自建網站紀錄學習過程。
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
@@ -17,9 +17,6 @@ export default function HomePage() {
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
             查看歷屆成果
-          </button>
-          <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
-            個人學習網站
           </button>
         </div>
       </section>
