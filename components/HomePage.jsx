@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function HomePage() {
   const [curriculumIndex, setCurriculumIndex] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
 
   const curriculumSections = [
     {
@@ -21,6 +22,11 @@ export default function HomePage() {
     },
   ];
 
+  const handleClick = () => {
+    setCurriculumIndex((curriculumIndex + 1) % 3);
+    setAnimationKey(prev => prev + 1); // 強制觸發動畫重播
+  };
+
   return (
     <main className="text-gray-800 bg-[#f8f9fa] transition-colors duration-700">
       {/* Hero Section */}
@@ -33,7 +39,7 @@ export default function HomePage() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button
-            onClick={() => setCurriculumIndex((curriculumIndex + 1) % 3)}
+            onClick={handleClick}
             className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100"
           >
             了解課程架構
@@ -67,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      <section className="py-16 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
+      <section key={animationKey} className="py-16 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
         <h2 className="text-3xl font-bold text-center mb-12">
           {curriculumSections[curriculumIndex].title}
         </h2>
