@@ -1,7 +1,25 @@
 import React, { useState } from "react";
 
 export default function HomePage() {
-  const [showCurriculum, setShowCurriculum] = useState(false);
+  const [curriculumIndex, setCurriculumIndex] = useState(0);
+
+  const curriculumSections = [
+    {
+      title: "探索 1：AI × 物聯網 × 數學融合",
+      content:
+        "探索 AI 的核心原理與應用，搭配物聯網裝置開發，結合數學與自然科學建立跨域學習模型，讓學生掌握運算思維與實作能力。",
+    },
+    {
+      title: "探索 2：感測器與智慧生活",
+      content:
+        "從環境感測器出發，進行資料蒐集與雲端儲存，設計日常生活應用專案，例如智慧盆栽、環境監測與自動化裝置。",
+    },
+    {
+      title: "探索 3：AI × 創造力 × 展示力",
+      content:
+        "導入生成式 AI 與影像識別應用，並結合簡報製作與展示技巧，讓學生具備創意表達與公開分享的能力。",
+    },
+  ];
 
   return (
     <main className="text-gray-800 bg-[#f8f9fa] transition-colors duration-700">
@@ -15,7 +33,7 @@ export default function HomePage() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <button
-            onClick={() => setShowCurriculum(!showCurriculum)}
+            onClick={() => setCurriculumIndex((curriculumIndex + 1) % 3)}
             className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100"
           >
             了解課程架構
@@ -49,10 +67,10 @@ export default function HomePage() {
       </section>
 
       {/* Exploratory Curriculum Reveal Section */}
-      <section className={`py-16 px-8 transition-all duration-700 ease-in-out ${showCurriculum ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-        <h2 className="text-3xl font-bold text-center mb-12">探索 1：AI × 物聯網 × 數學融合</h2>
+      <section className="py-16 px-8 transition-all duration-700 ease-in-out">
+        <h2 className="text-3xl font-bold text-center mb-12">{curriculumSections[curriculumIndex].title}</h2>
         <div className="max-w-4xl mx-auto text-center text-lg leading-relaxed">
-          <p>探索 AI 的核心原理與應用，搭配物聯網裝置開發，結合數學與自然科學建立跨域學習模型，讓學生掌握運算思維與實作能力。</p>
+          <p>{curriculumSections[curriculumIndex].content}</p>
         </div>
       </section>
 
