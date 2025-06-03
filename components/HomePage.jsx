@@ -110,17 +110,13 @@ export default function HomePage() {
       {/* Result Showcase Section */}
       <section className="py-16 px-8 bg-white">
         <h2 className="text-3xl font-bold text-center mb-6">歷屆成果展示｜2024 總統盃黑客松</h2>
-        <div className="max-w-4xl mx-auto">
-          <div className="relative w-full overflow-hidden">
-            <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${curriculumIndex * 100}%)` }}>
-              {results.map((item, i) => (
-                <div key={i} className="w-full flex-shrink-0">
-                  <img src={item.image} alt={`result-${i}`} className="w-full rounded-xl shadow mb-4" />
-                  <p className="text-center text-gray-700">{item.caption}</p>
-                </div>
-              ))}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {results.map((item, i) => (
+            <div key={i} className="text-center">
+              <img src={item.image} alt={`result-${i}`} className="w-full rounded-xl shadow mb-4" />
+              <p className="text-gray-700">{item.caption}</p>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
