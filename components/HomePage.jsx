@@ -24,8 +24,12 @@ export default function HomePage() {
   ];
 
   const handleClick = () => {
-    setShowCurriculum(true);
-    setCurriculumIndex((curriculumIndex + 1) % 3);
+    if (!showCurriculum) {
+      setShowCurriculum(true);
+      setCurriculumIndex(0);
+    } else {
+      setCurriculumIndex((curriculumIndex + 1) % 3);
+    }
     setAnimationKey(prev => prev + 1);
   };
 
