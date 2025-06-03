@@ -7,7 +7,7 @@ export default function HomePage() {
 
   const curriculumSections = [
     {
-      title: "探索 1：AI 人工智能,
+      title: "探索 1：AI 人工智能",
       content:
         "使用 AI ，探索 AI ，窺看核心基本原理，從模型的使用與Hugging face社群的結合，一步一步進入 AI 的底層,融入全新世代站穩一席之地。",
     },
