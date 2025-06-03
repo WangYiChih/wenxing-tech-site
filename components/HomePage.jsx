@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function HomePage() {
   const [curriculumIndex, setCurriculumIndex] = useState(0);
   const [animationKey, setAnimationKey] = useState(0);
   const [showCurriculum, setShowCurriculum] = useState(false);
+  const resultRef = useRef(null);
 
   const curriculumSections = [
     {
@@ -31,6 +32,10 @@ export default function HomePage() {
       setCurriculumIndex((curriculumIndex + 1) % 3);
     }
     setAnimationKey(prev => prev + 1);
+  };
+
+  const handleScrollToResults = () => {
+    resultRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const results = [
@@ -69,7 +74,10 @@ export default function HomePage() {
           >
             了解課程架構
           </button>
-          <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
+          <button
+            onClick={handleScrollToResults}
+            className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100"
+          >
             查看歷屆成果
           </button>
           <button className="bg-white text-blue-700 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100">
@@ -108,7 +116,7 @@ export default function HomePage() {
       )}
 
       {/* Result Showcase Section */}
-      <section className="py-16 px-8 bg-white">
+      <section ref={resultRef} className="py-16 px-8 bg-white">
         <h2 className="text-3xl font-bold text-center mb-6">歷屆成果展示｜2024 總統盃黑客松</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
           {results.map((item, i) => (
