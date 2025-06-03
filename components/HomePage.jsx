@@ -5,6 +5,7 @@ export default function HomePage() {
   const [animationKey, setAnimationKey] = useState(0);
   const [showCurriculum, setShowCurriculum] = useState(false);
   const resultRef = useRef(null);
+  const curriculumRef = useRef(null);
 
   const curriculumSections = [
     {
@@ -28,10 +29,13 @@ export default function HomePage() {
     if (!showCurriculum) {
       setShowCurriculum(true);
       setCurriculumIndex(0);
+      setTimeout(() => {
+        curriculumRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     } else {
       setCurriculumIndex((curriculumIndex + 1) % 3);
     }
-    setAnimationKey(prev => prev + 1);
+    setAnimationKey((prev) => prev + 1);
   };
 
   const handleScrollToResults = () => {
@@ -105,7 +109,7 @@ export default function HomePage() {
 
       {/* Exploratory Curriculum Reveal Section */}
       {showCurriculum && (
-        <section key={animationKey} className="py-8 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
+        <section ref={curriculumRef} key={animationKey} className="py-8 px-8 transition-all duration-700 ease-in-out animate-slide-fade-in">
           <h2 className="text-3xl font-bold text-center mb-8">
             {curriculumSections[curriculumIndex].title}
           </h2>
