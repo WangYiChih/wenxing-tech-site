@@ -33,6 +33,25 @@ export default function HomePage() {
     setAnimationKey(prev => prev + 1);
   };
 
+  const results = [
+    {
+      image: "/images/hackathon1.jpg",
+      caption: "2024 總統盃黑客松現場參賽剪影"
+    },
+    {
+      image: "/images/hackathon2.jpg",
+      caption: "團隊進行成果簡報，展示創新構想"
+    },
+    {
+      image: "/images/hackathon3.jpg",
+      caption: "專案簡報強調即時語音對話與實用性"
+    },
+    {
+      image: "/images/hackathon4.jpg",
+      caption: "榮獲最佳技術獎與最佳創意獎合影留念"
+    }
+  ];
+
   return (
     <main className="text-gray-800 bg-[#f8f9fa] transition-colors duration-700">
       {/* Hero Section */}
@@ -64,16 +83,13 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,150,255,0.05),rgba(0,150,255,0.05)_1px,transparent_1px,transparent_24px)] animate-slowbg z-0"></div>
         <h2 className="text-3xl font-bold text-center mb-12 relative z-10">下一代 讓科技上身</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative z-10">
-          {[
-            { icon: "🛠️", title: "動手實作", desc: "每位學生親手打造作品，從程式到硬體全方位學習。" },
-            { icon: "🏆", title: "競賽陪伴", desc: "全程指導參與全國與國際科技競賽，屢獲佳績。" },
-            { icon: "🤖", title: "AI 科技", desc: "結合人工智慧、物聯網等技術，走在時代尖端。" },
-            { icon: "🔗", title: "跨領域整合", desc: "融合數學、物理與生活應用，強化邏輯與創造力。" },
-          ].map((item, index) => (
-            <div key={index} className="bg-gray-50 p-6 rounded-xl shadow text-center">
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+          {["🛠️", "🏆", "🤖", "🔗"].map((icon, i) => (
+            <div key={i} className="bg-gray-50 p-6 rounded-xl shadow text-center">
+              <div className="text-4xl mb-4">{icon}</div>
+              <h3 className="text-xl font-semibold mb-2">{["動手實作", "競賽陪伴", "AI 科技", "跨領域整合"][i]}</h3>
+              <p className="text-sm text-gray-600">
+                {["每位學生親手打造作品，從程式到硬體全方位學習。", "全程指導參與全國與國際科技競賽，屢獲佳績。", "結合人工智慧、物聯網等技術，走在時代尖端。", "融合數學、物理與生活應用，強化邏輯與創造力。"][i]}
+              </p>
             </div>
           ))}
         </div>
@@ -91,6 +107,23 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Result Showcase Section */}
+      <section className="py-16 px-8 bg-white">
+        <h2 className="text-3xl font-bold text-center mb-6">歷屆成果展示｜2024 總統盃黑客松</h2>
+        <div className="max-w-4xl mx-auto">
+          <div className="relative w-full overflow-hidden">
+            <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${curriculumIndex * 100}%)` }}>
+              {results.map((item, i) => (
+                <div key={i} className="w-full flex-shrink-0">
+                  <img src={item.image} alt={`result-${i}`} className="w-full rounded-xl shadow mb-4" />
+                  <p className="text-center text-gray-700">{item.caption}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <style jsx>{`
         @keyframes slide-fade-in {
           from { opacity: 0; transform: translateY(10px); }
@@ -107,20 +140,6 @@ export default function HomePage() {
           animation: slowbg 60s linear infinite;
         }
       `}</style>
-
-      {/* 課程架構預留區塊 */}
-      <section className="py-16 px-8 bg-[#e8f7fa]">
-        <h2 className="text-3xl font-bold text-center mb-6">課程架構（敬請期待）</h2>
-        <p className="text-center text-gray-700 max-w-xl mx-auto">
-          本課程將依照學生年級與能力進行模組化教學，結合理論與實作，涵蓋 LED 控制、感測器應用、無線通訊、AI 辨識與競賽專題。完整課表即將公布。
-        </p>
-      </section>
-
-      {/* 歷屆成果預留區塊 */}
-      <section className="py-16 px-8 bg-white">
-        <h2 className="text-3xl font-bold text-center mb-6">歷屆成果展示</h2>
-        <p className="text-center text-gray-600">學生作品與獲獎紀錄整理中，將於近期公開展示。</p>
-      </section>
 
       {/* 社區公益服務（預留） */}
       <section className="py-16 px-8 bg-[#f0fff4]">
